@@ -96,10 +96,11 @@ class _TasksScreenState extends State<TasksScreen> {
                                           //   taskview.tasks
                                           // .add(Task(task: newText));
                                           // });
-                                          var taskview = TaskView();
-                                          setState(() {
-                                            taskview.getdata(newText);
-                                          });
+                                          // var taskview = TaskView();
+
+                                          // setState(() {
+                                          // taskview.getdata(newText);
+                                          // });
 
                                           Navigator.pop(context);
                                         },
