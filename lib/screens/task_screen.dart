@@ -1,9 +1,11 @@
+import 'dart:js_util';
+
 import 'package:flutter/material.dart';
 import 'package:state/task_view.dart';
 
 class TasksScreen extends StatefulWidget {
-  late Function callback;
-  // TasksScreen(this.callback);
+  final Function callback;
+  TasksScreen({required this.callback});
 
   @override
   State<TasksScreen> createState() => _TasksScreenState();
@@ -89,19 +91,7 @@ class _TasksScreenState extends State<TasksScreen> {
                                         }),
                                     TextButton(
                                         onPressed: () {
-                                          // widget.callback();
-                                          // print(newText);
-
-                                          // setState(() {
-                                          //   taskview.tasks
-                                          // .add(Task(task: newText));
-                                          // });
-                                          // var taskview = TaskView();
-
-                                          // setState(() {
-                                          // taskview.getdata(newText);
-                                          // });
-
+                                          widget.callback(newText);
                                           Navigator.pop(context);
                                         },
                                         child: Text("add task"))
@@ -119,4 +109,10 @@ class _TasksScreenState extends State<TasksScreen> {
           ],
         ));
   }
+
+  // void addTask(String taskName) {
+  //   // Use this method to add the task to your state or perform any other actions
+  //   // You can also call setState if needed.
+  //   print("Adding task: $taskName");
+  // }
 }
