@@ -10,38 +10,21 @@ class Task {
 }
 
 class TaskView extends StatefulWidget {
-  List<Task> tasks = [];
+  late List tasks;
+  TaskView({required this.tasks});
+
   @override
   State<TaskView> createState() => _TaskViewState();
 }
 
 class _TaskViewState extends State<TaskView> {
-  late String taskname;
-
-  void addtask(String taskName) {
-    setState(() {
-      taskname = taskName;
-    });
-  }
-  // void addTask(String taskName) {
-  //   setState(() {
-  //   });
-  // }
-  // void addTaskCallback(String taskName) {
-  //   setState(() {
-  //     widget.tasks.add(Task(task: taskName));
-  //   });
-  // widget.(taskName);
-  // widget.tasks.add(Task(task: taskName));
-  // }
-
-  @override
   @override
   Widget build(BuildContext context) {
     // if()
+    print(widget.tasks.length);
     return ListView.builder(
       itemBuilder: (context, index) {
-        TasksScreen(callback: addtask);
+        // TasksScreen(callback: addtask);
 
         return Tasklist(
           task: widget.tasks[index].task,

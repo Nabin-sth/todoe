@@ -12,7 +12,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: TasksScreen(callback: ),
+      home: TasksScreen(callback: () {
+        print("object");
+      }),
       debugShowCheckedModeBanner: false,
     );
   }

@@ -6,6 +6,13 @@ import 'package:state/task_view.dart';
 class TasksScreen extends StatefulWidget {
   final Function callback;
   TasksScreen({required this.callback});
+  List<Task> tasks = [
+    Task(
+      task: "dasd",
+    ),
+    Task(task: "task")
+  ];
+  // TaskView(tasks:tasks);
 
   @override
   State<TasksScreen> createState() => _TasksScreenState();
@@ -68,7 +75,7 @@ class _TasksScreenState extends State<TasksScreen> {
                     height: 20,
                   ),
                   Expanded(
-                    child: TaskView(),
+                    child: TaskView(tasks: widget.tasks),
                   ),
                   Container(
                     padding: const EdgeInsets.all(20),
@@ -91,7 +98,11 @@ class _TasksScreenState extends State<TasksScreen> {
                                         }),
                                     TextButton(
                                         onPressed: () {
-                                          widget.callback(newText);
+                                          setState(() {
+                                            widget.tasks
+                                                .add(Task(task: newText));
+                                          });
+                                          // widget.callback(newText);
                                           Navigator.pop(context);
                                         },
                                         child: Text("add task"))
