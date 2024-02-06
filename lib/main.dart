@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: TasksScreen(callback: () {
-        print("object");
+        print("neww");
       }),
       debugShowCheckedModeBanner: false,
     );
